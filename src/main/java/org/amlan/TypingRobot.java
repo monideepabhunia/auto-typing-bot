@@ -1,7 +1,6 @@
 package org.amlan;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -14,15 +13,11 @@ public class TypingRobot {
     private String fileContents;
 
     public TypingRobot() {
-      try{
+        try {
             robot = new Robot();
         } catch (Exception e) {
             System.out.println("Cannot create ROBOT!");
         }
-    }
-
-    public void setFileContents(String fileContents) {
-        this.fileContents = fileContents;
     }
 
     public TypingRobot(String sourceFilePath) {
@@ -44,6 +39,10 @@ public class TypingRobot {
 
     private String getFileContents() {
         return fileContents;
+    }
+
+    public void setFileContents(String fileContents) {
+        this.fileContents = fileContents;
     }
 
     private void readContentsAsString() throws IOException {
@@ -285,37 +284,37 @@ public class TypingRobot {
                 doType(VK_SHIFT, VK_BACK_QUOTE);
                 break;
             case '!':
-                doType(VK_EXCLAMATION_MARK);
+                doType(VK_SHIFT, VK_1);
                 break;
             case '@':
-                doType(VK_AT);
+                doType(VK_SHIFT, VK_3);
                 break;
             case '#':
-                doType(VK_NUMBER_SIGN);
+                doType(VK_SHIFT, VK_3);
                 break;
             case '$':
-                doType(VK_DOLLAR);
+                doType(VK_SHIFT, VK_4);
                 break;
             case '%':
                 doType(VK_SHIFT, VK_5);
                 break;
             case '^':
-                doType(VK_CIRCUMFLEX);
+                doType(VK_SHIFT, VK_6);
                 break;
             case '&':
-                doType(VK_AMPERSAND);
+                doType(VK_SHIFT, VK_7);
                 break;
             case '*':
-                doType(VK_ASTERISK);
+                doType(VK_SHIFT, VK_8);
                 break;
             case '(':
-                doType(VK_LEFT_PARENTHESIS);
+                doType(VK_SHIFT, VK_9);
                 break;
             case ')':
-                doType(VK_RIGHT_PARENTHESIS);
+                doType(VK_SHIFT, VK_0);
                 break;
             case '+':
-                doType(VK_PLUS);
+                doType(VK_SHIFT, VK_EQUALS);
                 break;
             case '\t':
                 doType(VK_TAB);
@@ -345,13 +344,13 @@ public class TypingRobot {
                 doType(VK_SEMICOLON);
                 break;
             case ':':
-                doType(VK_COLON);
+                doType(VK_SHIFT, VK_SEMICOLON);
                 break;
             case '\'':
                 doType(VK_QUOTE);
                 break;
             case '"':
-                doType(VK_QUOTEDBL);
+                doType(VK_SHIFT, VK_COMMA);
                 break;
             case ',':
                 doType(VK_COMMA);
@@ -390,10 +389,10 @@ public class TypingRobot {
 
         robot.delay(40);
         robot.keyPress(keyCodes[offset]);
-        if(keyCodes[offset] == 20){
+        if (keyCodes[offset] == 20) {
             robot.keyRelease(keyCodes[offset]);
-            doType(keyCodes, offset + 1, length-1);
-        }else {
+            doType(keyCodes, offset + 1, length - 1);
+        } else {
             doType(keyCodes, offset + 1, length - 1);
             robot.keyRelease(keyCodes[offset]);
         }

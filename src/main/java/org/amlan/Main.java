@@ -2,21 +2,19 @@ package org.amlan;
 // solved maven issue by : <mirrorOf>external:http:*</mirrorOf> -> <mirrorOf>external:https:*</mirrorOf>
 // in settings.xml
 //
-//import java.io.File;
-//import java.io.IOException;
-//
-//public class Main {
-//    public static void main(String[] args) {
-//
-////        TypingRobot robot = new TypingRobot("C:\\Users\\Pavilion\\Desktop\\test\\4201.txt");
-////        TypingRobot robot = new TypingRobot();
-////        String s = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
-////        s = "aA";
-////        System.out.println(s.length());
-////        robot.setFileContents(s);
-////        robot.startTyping();
+
+public class Main {
+    public static void main(String[] args) {
+
+//        TypingRobot robot = new TypingRobot("C:\\Users\\Pavilion\\Desktop\\test\\4201.txt");
+        TypingRobot robot = new TypingRobot();
+        String s = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+//        s = "aA";
+//        System.out.println(s.length());
+        robot.setFileContents(s);
+        robot.startTyping();
 //        createFiles("C:\\Users\\Pavilion\\Desktop\\textFiles");
-//    }
+    }
 //
 //
 //    public static void createFiles(String sourceFolder){
@@ -34,6 +32,6 @@ package org.amlan;
 //            }
 //        }
 //    }
-//}
-//
+}
+
 
